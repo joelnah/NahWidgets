@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="CornerTextView">
+        <attr name="corner_all" format="dimension" />
+        <attr name="corner_top" format="dimension" />
+        <attr name="corner_bottom" format="dimension" />
+        <attr name="corner_top_left" format="dimension" />
+        <attr name="corner_top_right" format="dimension" />
+        <attr name="corner_bottom_left" format="dimension" />
+        <attr name="corner_bottom_right" format="dimension" />
+        <attr name="stroke" format="dimension" />
+        <attr name="strokeColor"/>
+        <attr name="bgColor" format="color" />
+
+    </declare-styleable>
+</resources>
