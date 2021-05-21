@@ -8,12 +8,11 @@ import android.graphics.drawable.RippleDrawable;
 import android.graphics.drawable.ShapeDrawable;
 import android.graphics.drawable.shapes.RoundRectShape;
 
-import androidx.annotation.NonNull;
-
 import java.util.Arrays;
 
+import androidx.annotation.NonNull;
+
 public class Drawables {
-    float defValue = 0f;
 
     @NonNull
     public Drawable getSelectableDrawableFor(
@@ -50,12 +49,12 @@ public class Drawables {
     private GradientDrawable getGradientDrawable(float[] corners, float cornerAll, int stroke, int strokeColor, int bgColor) {
         GradientDrawable gradientDrawable = new GradientDrawable();
 
-        if (stroke != defValue) {
+        if (stroke != 0f) {
             gradientDrawable.setStroke(stroke, strokeColor);
         }
         gradientDrawable.setColor(bgColor);
 
-        if (cornerAll != defValue) {
+        if (cornerAll != 0f) {
             gradientDrawable.setCornerRadius(cornerAll);
         } else {
             gradientDrawable.setCornerRadii(
@@ -79,12 +78,12 @@ public class Drawables {
         float bottomL = cornerBottomLeft;
 
 
-        if (cornerTop != defValue) {
+        if (cornerTop != 0f) {
             topL = cornerTop;
             topR = cornerTop;
         }
 
-        if (cornerBottom != defValue) {
+        if (cornerBottom != 0f) {
             bottomR = cornerBottom;
             bottomL = cornerBottom;
         }
