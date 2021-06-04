@@ -28,8 +28,8 @@ public class Drawables {
             int strokeColor,
             int bgColor) {
 
-        ColorStateList pressedColor = ColorStateList.valueOf(lightenOrDarken(bgColor, 0.2D));
-        float[] corners = getCorners(cornerTop, cornerBottom, cornerTopLeft, cornerTopRight, cornerBottomRight, cornerBottomLeft);
+        ColorStateList pressedColor = ColorStateList.valueOf(lightenOrDarken(bgColor));
+        float[] corners = getCorners(cornerAll, cornerTop, cornerBottom, cornerTopLeft, cornerTopRight, cornerBottomRight, cornerBottomLeft);
 
         Drawable drawable;
         if (type == CornersEnum.BUTTON) {
@@ -65,6 +65,7 @@ public class Drawables {
 
     @NonNull
     private float[] getCorners(
+            float cornerAll,
             float cornerTop,
             float cornerBottom,
             float cornerTopLeft,
@@ -78,15 +79,24 @@ public class Drawables {
         float bottomL = cornerBottomLeft;
 
 
-        if (cornerTop != 0f) {
-            topL = cornerTop;
-            topR = cornerTop;
+        if(cornerAll != 0f){
+            topL = cornerAll;
+            topR = cornerAll;
+            bottomR = cornerAll;
+            bottomL = cornerAll;
+        }else{
+            if (cornerTop != 0f) {
+                topL = cornerTop;
+                topR = cornerTop;
+            }
+
+            if (cornerBottom != 0f) {
+                bottomR = cornerBottom;
+                bottomL = cornerBottom;
+            }
         }
 
-        if (cornerBottom != 0f) {
-            bottomR = cornerBottom;
-            bottomL = cornerBottom;
-        }
+
 
         return new float[]{topL, topL, topR, topR, bottomR, bottomR, bottomL, bottomL};
     }
@@ -104,7 +114,8 @@ public class Drawables {
         return shapeDrawable;
     }
 
-    private int lightenOrDarken(int color, double fraction) {
+    private int lightenOrDarken(int color) {
+        double fraction = 0.2;
         if (canLighten(color, fraction)) {
             return lighten(color, fraction);
         } else {
