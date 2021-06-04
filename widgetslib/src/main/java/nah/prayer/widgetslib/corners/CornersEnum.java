@@ -1,5 +1,5 @@
 package nah.prayer.widgetslib.corners;
 
 public enum CornersEnum {
-    BUTTON, TEXT, IMAGE,
+    C_BUTTON, C_TEXT, C_IMAGE,
 }

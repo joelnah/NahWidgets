@@ -9,6 +9,6 @@ import androidx.core.content.ContextCompat
 class CornerImageView(context: Context, attrs: AttributeSet?) : AppCompatImageView(context, attrs) {
     init {
         this.setBackgroundColor(ContextCompat.getColor(context, android.R.color.white))
-        this.background = StyleShorten().setStyle(context, attrs, CornersEnum.IMAGE)
+        this.background = StyleShorten().setStyle(context, attrs, CornersEnum.C_IMAGE)
     }
 }

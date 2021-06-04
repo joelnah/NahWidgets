@@ -3,6 +3,8 @@ package nah.prayer.widgetslib.corners
 import android.content.Context
 import android.graphics.drawable.Drawable
 import android.util.AttributeSet
+import android.util.TypedValue
+import androidx.annotation.ColorInt
 import androidx.core.content.ContextCompat
 import nah.prayer.widgetslib.R
 
@@ -35,12 +37,15 @@ class StyleShorten {
                 typeArray.getDimension(R.styleable.CornerTextView_corner_bottom_right, defValue)
 
         val stroke = typeArray.getDimension(R.styleable.CornerTextView_stroke, defValue)
-        val strokeColor = typeArray.getColor(
-                R.styleable.CornerTextView_strokeColor, ContextCompat.getColor(
-                context,
-                android.R.color.white
+        @ColorInt val strokeColor = typeArray.getColor(
+                R.styleable.CornerTextView_strokeColor,
+            ContextCompat.getColor(context, android.R.color.white)
         )
-        )
+
+//        val typedValue = TypedValue()
+//        val theme = context.theme
+//        theme.resolveAttribute(R.attr.theme_color, typedValue, true)
+//        @ColorInt val color = typedValue.data
 
         val bgColor = typeArray.getColor(
                 R.styleable.CornerTextView_bgColor, context.getColor(

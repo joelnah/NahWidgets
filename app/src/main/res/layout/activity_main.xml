@@ -1,10 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:tools="http://schemas.android.com/tools">
+<LinearLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="@android:color/white"
     android:gravity="center"
     tools:context=".MainActivity">
 
@@ -22,4 +25,27 @@
         android:text="Hello World!"/>
 
 
+    <nah.prayer.widgetslib.corners.CornerButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="20dp"
+        android:textColor="@color/black"
+        android:textAllCaps="false"
+        app:corner_all="@dimen/buttonRound"
+        app:stroke="1dp"
+        app:strokeColor="@android:color/holo_green_dark"
+        app:bgColor="@android:color/holo_blue_bright"
+        android:text="Hello World!"/>
+
+    <nah.prayer.widgetslib.corners.CornerTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="20dp"
+        android:textColor="@{true? @android:color/holo_blue_bright: @android:color/holo_blue_bright}"
+        app:corner_all="@dimen/buttonRound"
+        app:stroke="1dp"
+        android:text="Hello World!"/>
+
+
 </LinearLayout>
+</layout>

@@ -10,7 +10,7 @@
         <attr name="corner_bottom_left" format="dimension" />
         <attr name="corner_bottom_right" format="dimension" />
         <attr name="stroke" format="dimension" />
-        <attr name="strokeColor"/>
+        <attr name="strokeColor" format="reference|color"/>
         <attr name="bgColor" format="color" />
 
     </declare-styleable>
