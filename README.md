@@ -15,8 +15,8 @@ implementation 'com.github.joelnah:NahWidgets:Tag'
             app:corner_top_right="@dimen/buttonRound"
             app:corner_bottom_left="@dimen/buttonRound"
             app:stroke="1dp"
-            app:strokeColor="@android:color/holo_green_dark"
-            app:bgColor="@android:color/holo_blue_bright"
+            app:stroke_color="@android:color/holo_green_dark"
+            app:bg_color="@android:color/holo_blue_bright"
             android:text="Hello World!"/>
         
         ※CornerTextView도 동일
@@ -31,5 +31,12 @@ implementation 'com.github.joelnah:NahWidgets:Tag'
         corner_bottom_left : 하단 왼쪽 
         corner_bottom_right : 하단 오른쪽
         stroke : 외각선 두께
-        strokeColor : 외각선 색상
-        bgColor : 배경 색상
+        stroke_color : 외각선 색상
+        bg_color : 배경 색상
+
+
+코드수정
+
+        view.setNaStrokeColor(ContextCompat.getColor(this, R.color.black))
+        view.setBackgroundColor(ContextCompat.getColor(this, R.color.black))
+        view.setNaStrokeSize(5)
