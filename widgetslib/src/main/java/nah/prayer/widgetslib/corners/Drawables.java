@@ -24,7 +24,7 @@ public class Drawables {
             float cornerBottomRight,
             float cornerBottomLeft,
             float cornerAll,
-            int stroke,
+            float stroke,
             int strokeColor,
             int bgColor) {
 
@@ -46,11 +46,11 @@ public class Drawables {
     }
 
     @NonNull
-    private GradientDrawable getGradientDrawable(float[] corners, float cornerAll, int stroke, int strokeColor, int bgColor) {
+    private GradientDrawable getGradientDrawable(float[] corners, float cornerAll, float stroke, int strokeColor, int bgColor) {
         GradientDrawable gradientDrawable = new GradientDrawable();
 
         if (stroke != 0f) {
-            gradientDrawable.setStroke(stroke, strokeColor);
+            gradientDrawable.setStroke((int)stroke, strokeColor);
         }
         gradientDrawable.setColor(bgColor);
 

@@ -67,8 +67,8 @@ class StyleShorten {
         return setDrawables()
     }
 
-    fun setCustomStrokeSize(width:Float):Drawable{
-        stroke = width
+    fun setCustomStrokeSize(width:Int):Drawable{
+        stroke = width.toFloat()
         return setDrawables()
     }
 
@@ -92,7 +92,7 @@ class StyleShorten {
             cornerBottomRight,
             cornerBottomLeft,
             cornerAll,
-            stroke.toInt(),
+            stroke,
             strokeColor,
             bgColor
         )

@@ -14,7 +14,7 @@ class CornerButton(context: Context, attrs: AttributeSet?) : AppCompatButton(con
         this.background = styleShorten.setStyle(context, attrs, CornersEnum.C_BUTTON)
     }
 
-    fun setNaStrokeSize(width:Float){
+    fun setNaStrokeSize(width:Int){
         this.background = styleShorten.setCustomStrokeSize(width)
     }
 

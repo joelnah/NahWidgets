@@ -14,7 +14,7 @@ class CornerImageView(context: Context, attrs: AttributeSet?) : AppCompatImageVi
         this.background = styleShorten.setStyle(context, attrs, CornersEnum.C_IMAGE)
     }
 
-    fun setNaStrokeSize(width:Float){
+    fun setNaStrokeSize(width:Int){
         this.background = styleShorten.setCustomStrokeSize(width)
     }
 

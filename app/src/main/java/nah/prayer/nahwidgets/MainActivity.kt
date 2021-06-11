@@ -14,7 +14,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         binding.tvTest.setNaStrokeColor(ContextCompat.getColor(this, R.color.black))
-        binding.tvTest.setNaStrokeSize(10f)
+        binding.tvTest.setNaStrokeSize(10)
 
     }
 }

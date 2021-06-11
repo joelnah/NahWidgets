@@ -14,7 +14,7 @@ class CornerTextView(context: Context, attrs: AttributeSet?) : AppCompatTextView
         this.background = styleShorten.setStyle(context, attrs, CornersEnum.C_TEXT)
     }
 
-    fun setNaStrokeSize(width:Float){
+    fun setNaStrokeSize(width:Int){
         this.background = styleShorten.setCustomStrokeSize(width)
     }
 
