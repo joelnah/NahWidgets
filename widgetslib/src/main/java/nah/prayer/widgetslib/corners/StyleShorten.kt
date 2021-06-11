@@ -3,71 +3,98 @@ package nah.prayer.widgetslib.corners
 import android.content.Context
 import android.graphics.drawable.Drawable
 import android.util.AttributeSet
-import android.util.TypedValue
 import androidx.annotation.ColorInt
 import androidx.core.content.ContextCompat
 import nah.prayer.widgetslib.R
 
 class StyleShorten {
-    fun setStyle(context: Context, attrs: AttributeSet?, type: CornersEnum):Drawable {
 
+    private val defValue = 0f
+    private lateinit var type: CornersEnum
+
+    private var cornerAll = defValue
+    private var cornerTop = defValue
+    private var cornerBottom = defValue
+    private var cornerTopLeft = defValue
+    private var cornerTopRight = defValue
+    private var cornerBottomLeft = defValue
+    private var cornerBottomRight = defValue
+    private var stroke = defValue
+
+    @ColorInt private var strokeColor=0
+    @ColorInt private var bgColor=0
+
+    fun setStyle(context: Context, attrs: AttributeSet?, type: CornersEnum):Drawable {
+        this.type = type
         val typeArray = context.obtainStyledAttributes(attrs, R.styleable.CornerTextView)
 
-        val defValue = 0f
-
-        val cornerAll = typeArray.getDimension(R.styleable.CornerTextView_corner_all, defValue)
-        val cornerTop = typeArray.getDimension(R.styleable.CornerTextView_corner_top, defValue)
-        val cornerBottom = typeArray.getDimension(
+        cornerAll = typeArray.getDimension(R.styleable.CornerTextView_corner_all, defValue)
+        cornerTop = typeArray.getDimension(R.styleable.CornerTextView_corner_top, defValue)
+        cornerBottom = typeArray.getDimension(
                 R.styleable.CornerTextView_corner_bottom,
                 defValue
         )
-        val cornerTopLeft = typeArray.getDimension(
+        cornerTopLeft = typeArray.getDimension(
                 R.styleable.CornerTextView_corner_top_left,
                 defValue
         )
-        val cornerTopRight = typeArray.getDimension(
+        cornerTopRight = typeArray.getDimension(
                 R.styleable.CornerTextView_corner_top_right,
                 defValue
         )
-        val cornerBottomLeft = typeArray.getDimension(
+        cornerBottomLeft = typeArray.getDimension(
                 R.styleable.CornerTextView_corner_bottom_left,
                 defValue
         )
-        val cornerBottomRight =
+        cornerBottomRight =
                 typeArray.getDimension(R.styleable.CornerTextView_corner_bottom_right, defValue)
 
-        val stroke = typeArray.getDimension(R.styleable.CornerTextView_stroke, defValue)
-        @ColorInt val strokeColor = typeArray.getColor(
-                R.styleable.CornerTextView_strokeColor,
+        stroke = typeArray.getDimension(R.styleable.CornerTextView_stroke, defValue)
+        strokeColor = typeArray.getColor(
+                R.styleable.CornerTextView_stroke_color,
             ContextCompat.getColor(context, android.R.color.white)
         )
+//        val tset = typeArray.getColorStateList(R.styleable.CornerTextView_stroke_color)
 
-//        val typedValue = TypedValue()
-//        val theme = context.theme
-//        theme.resolveAttribute(R.attr.theme_color, typedValue, true)
-//        @ColorInt val color = typedValue.data
-
-        val bgColor = typeArray.getColor(
-                R.styleable.CornerTextView_bgColor, context.getColor(
+        bgColor = typeArray.getColor(
+                R.styleable.CornerTextView_bg_color, context.getColor(
                 android.R.color.white
         )
         )
 
         typeArray.recycle()
 
-        return Drawables().getSelectableDrawableFor(
-                type,
-                cornerTop,
-                cornerBottom,
-                cornerTopLeft,
-                cornerTopRight,
-                cornerBottomRight,
-                cornerBottomLeft,
-                cornerAll,
-                stroke.toInt(),
-                strokeColor,
-                bgColor
-        )
+        return setDrawables()
+    }
 
+    fun setCustomStrokeSize(width:Float):Drawable{
+        stroke = width
+        return setDrawables()
+    }
+
+    fun setCustomStrokeColor(@ColorInt color:Int):Drawable{
+        strokeColor = color
+        return setDrawables()
+    }
+
+    fun setCustomBackGroundColor(@ColorInt color:Int):Drawable{
+        bgColor = color
+        return setDrawables()
+    }
+
+    private fun setDrawables():Drawable{
+        return Drawables().getSelectableDrawableFor(
+            type,
+            cornerTop,
+            cornerBottom,
+            cornerTopLeft,
+            cornerTopRight,
+            cornerBottomRight,
+            cornerBottomLeft,
+            cornerAll,
+            stroke.toInt(),
+            strokeColor,
+            bgColor
+        )
     }
 }
