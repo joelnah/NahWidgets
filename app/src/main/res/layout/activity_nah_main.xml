@@ -49,5 +49,34 @@
         app:stroke="1dp"
         android:text="Hello World!"/>
 
+    <nah.prayer.widgetslib.corners.CornerFrameLayout
+        android:id="@+id/layoutTest"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="20dp"
+        app:stroke_color="@android:color/holo_green_dark"
+        app:corner_top_right="@dimen/buttonRound"
+        app:corner_bottom_left="@dimen/buttonRound"
+        app:stroke="1dp">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:text="Hello World!"/>
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:text="Hello World!"/>
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+    </nah.prayer.widgetslib.corners.CornerFrameLayout>
+
 </LinearLayout>
 </layout>
