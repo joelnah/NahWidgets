@@ -20,6 +20,22 @@ implementation 'com.github.joelnah:NahWidgets:Tag'
             android:text="Hello World!"/>
         
         ※CornerTextView도 동일
+        ※CornerImageView도 동일 (가능하면 그냥 ShapeableImageView 사용)
+                https://howtodoandroid.com/shapeableimageview-material-components-android/
+                
+                --programmatically--
+                @ExperimentalImageView
+                  private void setup() {
+
+                    ShapeableImageView imageView = findViewById(R.id.image_view);
+
+                    float radius = getResources().getDimension(R.dimen.default_corner_radius);
+                    imageView.setShapeAppearanceModel(imageView.getShapeAppearanceModel()
+                        .toBuilder()
+                        .setTopRightCorner(CornerFamily.ROUNDED,radius)
+                        .build());
+
+                  }
 
 스타일
 
